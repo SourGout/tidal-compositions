@@ -1,0 +1,12 @@
+bps (60/60)
+
+d1 $ every 4 (jux (rev)) $ every 8 (density 2) $ sound "arpy arp/2 sine" # speed "10 2/2 4 3 6 11" # cutoff "600/2 900/2 1200/2"
+d2 $ every 2 (jux (rev)) $ every 8 (density 3) $ sound "arpy arp/2 sine*3" # speed "7 1/2 [1 2 2] 3 19 12" # cutoff "600/2 900/2 1200/2"
+d3 $ every 12 (jux (density 2)) $ sound "dr_few ~ ~ ~ "
+d4 $ sometimes (jux (rev)) $ every 16 (density 2) $ sound "sn ~ ~ ~ industrial/4 [cp cp]/2" # gain "0.7" # speed "1.2" # crush "8"
+
+d1 $ silence
+d2 $ silence
+d3 $ silence
+d4 $ silence
+hush
