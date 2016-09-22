@@ -1,0 +1,24 @@
+bps (50/60)
+
+
+d1 $ sometimes (jux (rev)) $ sometimes (density 2) $ sound "arp*8" # speed "1 2 1 6 7 1 9 8" # gain "0.9 0.8 0.9 1 0.7 0.7" # vowel "i" # cutoff "400"
+d2 $ sometimes (jux (rev)) $ sound "dr_few*4 ~" # gain "0.85"
+d3 $ every 16 (jux (rev)) $ every 4 (density 2) $ every 8 (density 4) $ sound "~ cp"
+d4 $ sometimes (jux (rev)) $ sometimes (density 2) $ sound "battles/6 [hh hh]/2"
+d5 $ every 4 (jux (rev)) $ sometimes (density 4) $ sometimes (slow 2) $ sometimes (density 2) $ sound "arp arp" # speed "6 9 8" # vowel "e" # gain "0.8" # cutoff "900" # crush "4"
+d6 $ sometimes (jux (rev)) $ slow 2 $ every 6 (density 2) $ every 7 (density 2) $ every 8 (density 2) $ every 3 (rev) $ sound "dr_few bin*2 [bd cp] cp/5" # crush "4" # gain "0.9"
+d7 $ density 2 $ sometimes (jux (rev)) $ sometimes (slow 2) $ sound "arp*8" # speed "1 2 1 6 2 1 6 2" # gain "0.8 0.8 0.9 1 0.7 0.7" # vowel "i" # crush "4"
+d8 $ sometimes (jux (rev)) $ every 6 (density 2) $ sound "industrial/2 wobble*2" # gain "1.1"
+d9 $ every 24 (density 2) $ every 8 (jux (rev)) $ sound "~ ~ ~ print/4" # speed "0.5"
+
+
+d1 $ silence
+d2 $ silence
+d3 $ silence
+d4 $ silence
+d5 $ silence
+d6 $ silence
+d7 $ silence
+d8 $ silence
+d9 $ silence
+hush
