@@ -24,10 +24,10 @@ hush
 
 bps (100/60)
 
-d1 $ every 4 (jux (rev)) $ every 8 (density 2) $ sound "~ arp/2 sine ~" # speed "10 2/2 4 6 6 11" # cutoff "600/2 900/2 1200/2" # gain "0.95"
-d2 $ sometimes (jux (rev)) $ every 8 (density 3) $ sound "sine arp/2 sine*3 ~" # speed "7 1/2 [1 12 12] 12 19 12" # cutoff "600/2 900/2 1200/2" # gain "0.85"
+d1 $ every 4 (jux (rev)) $ every 8 (density 2) $ sound "~ pluck/2 sine ~" # speed "10 1.5/2 4 6 6 11" # cutoff "600/2 900/2 1200/2" # gain "0.95"
+d2 $ sometimes (jux (rev)) $ every 8 (density 3) $ sound "sine pluck/2 sine*3 ~" # speed "12 12/2 [12 12.5]" # cutoff "600/2 900/2 1200/2" # gain "0.85"
 d3 $ every 12 (jux (density 2)) $ sound "dr_few ~ ~ ~ "
-d4 $ slow 4 $ sometimes (jux (rev)) $ sound "dr_few ~ ~ ~ " # gain "0.8" # crush "4" # speed "0.1"
+d4 $ slow 4 $ sometimes (jux (rev)) $ sound "pluck ~ ~ ~ " # gain "0.8" # crush "4" # speed "0.5"
 d5 $ sometimes (jux (rev)) $ every 16 (density 2) $ sound "sn ~ ~ ~ industrial/4 [cp cp]/2" # gain "0.8" # speed "1.2" # crush "8"
-
+d6 $ slow 8 $ sometimes (jux (rev)) $ sometimes (jux (slow 2)) $ sometimes (jux (density 2)) $ sound "sax sax sax sax" # gain "0.5" # speed "1 0.8 1.5 1.2" # vowel "o i o e"
 hush
