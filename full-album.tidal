@@ -1,3 +1,29 @@
+\\full-album\\
+
+\\track zero | nebula |
+
+bps (50/60)
+bps (100/60)
+
+d1 $ slowcat [sometimes (jux(rev)) $ sound "~ moog*2" # speed "~ [2.5 1]" # vowel "i",
+every 4 (density 3) $ density 2 $ sound "pluck moog:3" # speed "1.5 ~ 2.5",
+sometimes (jux(rev)) $ sound "~ moog*2" # speed "~ [2 ~ 5]" # vowel "i"
+]
+d2 $ stack [jux (rev) $ every 4 (density 2) $ every 7 (slow 2) $ sound "bin*6" # speed "2 1.5 0.75 1.25 1 2.5",
+sometimes (jux (density 3)) $ every 7 (slow 3) $ every 3 (density 2) $ sound "bin*5" # speed "1 1.25 0.75 1.5 2",
+sometimes (jux (density 7)) $ every 5 (density 3) $ slow 2 $ sometimes (jux(rev)) $ sound "bin*2" # speed "0.5"
+] # gain "0.5"
+d3 $ stack [density 2 $ sound "bd sn:2/4 bd cp/2",
+sometimes (jux (rev)) $ every 4 (density 2) $ every 7 (slow 2) $ sound "pluck/2 pluck/2" # speed "2 1.5" # crush "4"
+]
+
+d1 $ silence
+d2 $ silence
+d3 $ silence
+
+hush
+
+
 \\track one - | mechanical |
 
 bps (50/60)
@@ -21,8 +47,8 @@ d4 $ silence
 d5 $ silence
 d6 $ silence
 
-
 hush
+
 
 \\track two - | smooth |
 
@@ -44,6 +70,31 @@ d4 $ slow 2 $ sometimes (jux(rev)) $  every 8 (density 2) $ slowcat [sound "ifdr
 sound "ifdrums ~ cp ifdrums ~ ~" # gain "1 ~ 0.8 0.9 ~ ~" # vowel "o",
 sound "ifdrums ~ ifdrums cp ~ sn:2" # gain "0.8 ~ ~ 0.9 ~ ~" # crush "8"
 ]
+
+d1 $ silence
+d2 $ silence
+d3 $ silence
+d4 $ silence
+
+hush
+
+
+\\track three | software |
+
+bps (30/60)
+
+d1 $ stack [slow 2 $ jux(rev) $ sound "breaks165/8" # speed "0.5" # crush "4" # gain "0.7",
+sometimes (jux(rev)) $ sound "jungbass*2 bd bd" # speed "[1.5 1] 1.5 2",
+sometimes (jux(rev)) $ sound "{cp ~ cp} sn:2/2" # speed "0.9",
+sound "bass arp/2 moog/12" # speed "0.5 1/2 0.8/12",
+every 4 (density 2) $ sometimes (jux(rev)) $ sound "dr_few*2 sn:2*4 hh*8" # gain "0.8" # crush "8" # vowel "o"
+]
+d2 $ slowcat [density 2 $ sometimes (jux(rev)) $ every 8 (density 2) $ sound "moog*4" # speed "2 1.2 1.5 0.8" # gain "0.7",
+density 4 $ sometimes (jux(rev)) $ every 8 (density 4) $ sound "arp*4" # speed "1.2 0.8 2 1 2 1.4 1.1" # gain "0.7",
+sound "arp ~ pluck" # speed "1 ~ 0.2"
+]
+d3 $ sometimes (jux(rev)) $ every 4 (density 2) $ sound "bin bin/2 ~ bin" # gain "0.8"
+d4 $ jux (rev) $ sound "wobble" # gain "0.8"
 
 d1 $ silence
 d2 $ silence
