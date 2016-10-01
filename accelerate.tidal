@@ -1,0 +1,57 @@
+--accelerate//sg
+
+bps (30/60)
+
+d1 $ stack [every 4 (density 2)
+             $ sometimes (jux(rev))
+             $ sound "bd dr_few ~ cp*2",
+             sometimes (jux(density 4))
+             $ every 3 (density 3)
+             $ sound "bin*5"
+             # speed "1.2 3 6 4.3 2"
+             # gain "0.5"]
+
+d2 $ slowcat [sometimes (jux(rev))
+               $ sound "moog"
+               # n "0",
+               every 2 (density 2)
+               $ every 7 (density 3)
+               $ every 10 (slow 2)
+               $ sound "pluck*4"
+               # n "0 2 5 3 7",
+               sound "pluck*6"
+               # n "0 2 5 3 7"] # gain "0.8"
+
+d3 $ stack [sometimes (jux (rev))
+             $ slow 4
+             $ sound "industrial*2"
+             # gain "0.8",
+             slow 6
+             $ sometimes (jux (density 2))
+             $ sound "~ print"
+             # gain "1"]
+
+d4 $ stack [sometimes (jux(rev))
+             $ every 2 (rev)
+             $ every 4 (slow 2)
+             $ every 7 (density 2)
+             $ n "0 2 5 3 7"
+             # s "supersaw"
+             # cutoff "200",
+             sometimes (jux(rev))
+             $ slow 2
+             $ n "3 5 2"
+             # s "supergong"
+             # cutoff "700",
+             sometimes (jux(rev))
+             $ every 6 (density 2)
+             $ every 14 (slow 2)
+             $ n "7 2 0 5"
+             # s "superpwm"
+             # vowel "e"
+             # cutoff "300"]         
+
+
+bps (60/60)
+
+hush

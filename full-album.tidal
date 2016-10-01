@@ -1,38 +1,50 @@
-\\full-album\\
-
-\\track zero | nebula |
+-- \\track zero | nebula |
 
 bps (50/60)
 bps (100/60)
 
 d1 $ slowcat [sometimes (jux(rev)) $ sound "~ moog*2" # speed "~ [2.5 1]" # vowel "i",
-every 4 (density 3) $ density 2 $ sound "pluck moog:3" # speed "1.5 ~ 2.5",
-sometimes (jux(rev)) $ sound "~ moog*2" # speed "~ [2 ~ 5]" # vowel "i"
-]
-d2 $ stack [jux (rev) $ every 4 (density 2) $ every 7 (slow 2) $ sound "bin*6" # speed "2 1.5 0.75 1.25 1 2.5",
-sometimes (jux (density 3)) $ every 7 (slow 3) $ every 3 (density 2) $ sound "bin*5" # speed "1 1.25 0.75 1.5 2",
-sometimes (jux (density 7)) $ every 5 (density 3) $ slow 2 $ sometimes (jux(rev)) $ sound "bin*2" # speed "0.5"
-] # gain "0.5"
+               every 4 (density 3) $ density 2 $ sound "pluck moog:3" # speed "1.5 ~ 2.5",
+               sometimes (jux(rev)) $ sound "~ moog*2" # speed "~ [2 ~ 5]" # vowel "i"]
+
+d2 $ stack [jux (rev) $ every 4 (density 2)
+             $ every 7 (slow 2)
+             $ sound "bin*6" # speed "2 1.5 0.75 1.25 1 2.5",
+             sometimes (jux (density 3)) $ every 7 (slow 3) $ every 3 (density 2) $ sound "bin*5" # speed "1 1.25 0.75 1.5 2",
+             sometimes (jux (density 7)) $ every 5 (density 3) $ slow 2 $ sometimes (jux(rev)) $ sound "bin*2" # speed "0.5"
+           ] # gain "0.5"
+
 d3 $ stack [density 2 $ sound "bd sn:2/4 bd cp/2",
-sometimes (jux (rev)) $ every 4 (density 2) $ every 7 (slow 2) $ sound "pluck/2 pluck/2" # speed "2 1.5" # crush "4"
-]
+             sometimes (jux (rev))
+             $ every 4 (density 2)
+             $ every 7 (slow 2)
+             $ sound "pluck/2 pluck/2" # speed "2 1.5" # crush "4"]
 
 d1 $ silence
+
 d2 $ silence
+
 d3 $ silence
 
 hush
 
-
-\\track one - | mechanical |
+-- \\track one - | mechanical |
 
 bps (50/60)
 
-d1 $ sometimes (jux (rev)) $ sometimes (density 2) $ sound "arp*8" # speed "1 2 1 6 7 1 9 8" # gain "0.9 0.8 0.9 1 0.7 0.7" # vowel "i" # cutoff "400"
-d2 $ stack [sometimes (jux (rev)) $ sound "dr_few*4 ~" # gain "0.85",
-every 16 (jux (rev)) $ every 4 (density 2) $ every 8 (density 4) $ sound "~ cp",
-sometimes (jux (rev)) $ sometimes (density 2) $ sound "battles/6 [hh hh]/2"
-]
+d1 $ sometimes (jux (rev))
+  $ sometimes (density 2)
+  $ sound "arp*8"
+  # speed "1 2 1 6 7 1 9 8"
+  # gain "0.9 0.8 0.9 1 0.7 0.7"
+  # vowel "i"
+  # cutoff "400"
+
+d2 $ stack [sometimes (jux (rev))
+             $ sound "dr_few*4 ~" # gain "0.85",
+             every 16 (jux (rev)) $ every 4 (density 2) $ every 8 (density 4) $ sound "~ cp",
+             sometimes (jux (rev)) $ sometimes (density 2) $ sound "battles/6 [hh hh]/2"]
+  
 d3 $ every 4 (jux (rev)) $ sometimes (density 4) $ sometimes (slow 2) $ sometimes (density 2) $ sound "arp*2" # speed "6 9 8" # vowel "e" # gain "0.8" # cutoff "900" # crush "4"
 d4 $ sometimes (jux (rev)) $ slow 2 $ every 6 (density 2) $ every 7 (density 2) $ every 8 (density 2) $ every 3 (rev) $ sound "dr_few bin*2 [bd cp] cp/5" # crush "16" # gain "0.9"
 d5 $ density 2 $ sometimes (jux (rev)) $ sometimes (slow 2) $ sound "arp*8" # speed "1 2 1 6 2 1 6 2" # gain "0.8 0.8 0.9 1 0.7 0.7" # vowel "i" # crush "4"
@@ -50,7 +62,7 @@ d6 $ silence
 hush
 
 
-\\track two - | smooth |
+-- \\track two - | smooth |
 
 bps (100/60)
 
@@ -79,7 +91,7 @@ d4 $ silence
 hush
 
 
-\\track three | software |
+-- \\track three | software |
 
 bps (30/60)
 
