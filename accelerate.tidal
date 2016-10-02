@@ -2,6 +2,7 @@
 
 bps (30/60)
 bps (60/60)
+hush
 
 d1 $ stack [every 4 (density 2)
              $ sometimes (jux(rev))
@@ -55,10 +56,8 @@ d4 $ stack [sometimes (jux(rev))
 d5 $ slowcat [every 4 (jux(rev))
               $ every 6 (slow 2)
               $ every 13 (slow 4)
-              $ n "c2 a2"
-              # s "pluck*2",
+              $ n "c2 d2"
+              # s "supergong*2",
               every 3 (density 2)
               $ n "a3 ~ ~ d3"
-              # s "pluck*2"]
-
-hush
+              # s "supergong*2"]
