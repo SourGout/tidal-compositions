@@ -1,10 +1,11 @@
 --accelerate//sg
 
 bps (30/60)
+bps (60/60)
 
-d1G $ stack [every 4 (density 2)
+d1 $ stack [every 4 (density 2)
              $ sometimes (jux(rev))
-             $ sound "bd dr_few ~ cp*2",
+             $ sound "bd dr_few ~ sn:2*2",
              sometimes (jux(density 4))
              $ every 3 (density 3)
              $ sound "bin*5"
@@ -55,13 +56,9 @@ d5 $ slowcat [every 4 (jux(rev))
               $ every 6 (slow 2)
               $ every 13 (slow 4)
               $ n "c2 a2"
-              # s "superpwm",
+              # s "pluck*2",
               every 3 (density 2)
               $ n "a3 ~ ~ d3"
-              # s "superpwm"]
-  
-  
-
-bps (60/60)
+              # s "pluck*2"]
 
 hush
