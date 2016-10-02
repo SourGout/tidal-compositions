@@ -1,23 +1,50 @@
-\\track three | software |
+-- \\track three | software |
 
 bps (30/60)
-
-d1 $ stack [slow 2 $ jux(rev) $ sound "breaks165/8" # speed "0.5" # crush "4" # gain "0.7",
-sometimes (jux(rev)) $ sound "jungbass*2 bd bd" # speed "[1.5 1] 1.5 2",
-sometimes (jux(rev)) $ sound "{cp ~ cp} sn:2/2" # speed "0.9",
-sound "bass arp/2 moog/12" # speed "0.5 1/2 0.8/12",
-every 4 (density 2) $ sometimes (jux(rev)) $ sound "dr_few*2 sn:2*4 hh*8" # gain "0.8" # crush "8" # vowel "o"
-]
-d2 $ slowcat [density 2 $ sometimes (jux(rev)) $ every 8 (density 2) $ sound "moog*4" # speed "2 1.2 1.5 0.8" # gain "0.7",
-density 4 $ sometimes (jux(rev)) $ every 8 (density 4) $ sound "arp*4" # speed "1.2 0.8 2 1 2 1.4 1.1" # gain "0.7",
-sound "arp ~ pluck" # speed "1 ~ 0.2"
-]
-d3 $ sometimes (jux(rev)) $ every 4 (density 2) $ sound "bin bin/2 ~ bin" # gain "0.8"
-d4 $ jux (rev) $ sound "wobble" # gain "0.8"
-
-d1 $ silence
-d2 $ silence
-d3 $ silence
-d4 $ silence
-
 hush
+
+d1 $ stack [slow 2
+             $ jux(rev)
+             $ sound "breaks165/8"
+             # speed "0.5"
+             # crush "4"
+             # gain "0.7",
+             sometimes (jux(rev))
+             $ sound "jungbass*2 bd bd"
+             # speed "[1.5 1] 1.5 2",
+             sometimes (jux(rev))
+             $ sound "{cp ~ cp} sn:2/2"
+             # speed "0.9",
+             sound "bass arp/2 moog/12"
+             # speed "0.5 1/2 0.8/12",
+             every 4 (density 2)
+             $ sometimes (jux(rev))
+             $ sound "dr_few*2 sn:2*4 hh*8"
+             # gain "0.8"
+             # crush "8"
+             # vowel "o"]
+  
+d2 $ slowcat [density 2
+               $ sometimes (jux(rev))
+               $ every 8 (density 2)
+               $ sound "moog*4"
+               # speed "2 1.2 1.5 0.8"
+               # gain "0.7",
+               density 4
+               $ sometimes (jux(rev))
+               $ every 8 (density 4)
+               $ sound "arp*4"
+               # speed "1.2 0.8 2 1 2 1.4 1.1"
+               # gain "0.7",
+               sound "arp ~ pluck"
+               # speed "1 ~ 0.2"]
+  
+d3 $ sometimes (jux(rev))
+  $ every 4 (density 2)
+  $ sound "bin bin/2 ~ bin"
+  # gain "0.8"
+
+d4 $ jux (rev)
+  $ sound "wobble"
+  # gain "0.8"
+

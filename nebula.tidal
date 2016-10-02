@@ -1,0 +1,24 @@
+-- \\track zero | nebula |
+
+bps (50/60)
+bps (100/60)
+hush
+
+d1 $ slowcat [sometimes (jux(rev)) $ sound "~ moog*2" # speed "~ [2.5 1]" # vowel "i",
+               every 4 (density 3) $ density 2 $ sound "pluck moog:3" # speed "1.5 ~ 2.5",
+               sometimes (jux(rev)) $ sound "~ moog*2" # speed "~ [2 ~ 5]" # vowel "i"]
+
+d2 $ stack [jux (rev) $ every 4 (density 2)
+             $ every 7 (slow 2)
+             $ sound "bin*6" # speed "2 1.5 0.75 1.25 1 2.5",
+             sometimes (jux (density 3)) $ every 7 (slow 3) $ every 3 (density 2) $ sound "bin*5" # speed "1 1.25 0.75 1.5 2",
+             sometimes (jux (density 7)) $ every 5 (density 3) $ slow 2 $ sometimes (jux(rev)) $ sound "bin*2" # speed "0.5"
+           ] # gain "0.5"
+
+d3 $ stack [density 2 $ sound "bd sn:2/4 bd cp/2",
+             sometimes (jux (rev))
+             $ every 4 (density 2)
+             $ every 7 (slow 2)
+             $ sound "pluck/2 pluck/2" # speed "2 1.5" # crush "4"]
+
+

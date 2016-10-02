@@ -1,0 +1,67 @@
+-- \\track two - | smooth |
+
+bps (100/60)
+hush
+
+d1 $ stack [every 4 (jux (rev))
+             $ sometimes (density 2)
+             $ every 4 (jux (density 5))
+             $ sound "~ pluck/2 sine/2 ~"
+             # speed "10 1.5/2 4 6 6 11"
+             # cutoff "600/2 900/2 1200/2"
+             # gain "0.95"
+             # vowel "0",
+             sometimes (jux(density 2))
+             $ sound "sine/4 pluck/2 sine*3 ~"
+             # speed "12 12/2 [12 12.5]"
+             # cutoff "600/2 900/2 1200/2"
+             # gain "0.85"
+             # vowel "i",
+             every 12 (jux (density 2))
+             $ sound "dr_few ~ ~ ~ "
+             # gain "0.9",
+             slow 4
+             $ sometimes (jux (rev))
+             $ sound "~ pluck ~ ~ "
+             # gain "0.8"
+             # crush "8"
+             # speed "0.8",
+             sometimes (jux (rev))
+             $ every 16 (density 2)
+             $ sound "sn ~ ~ ~ pluck/4 sine/2"
+             # gain "0.8"
+             # speed "1"
+             # crush "8"]
+  
+d2 $ slow 8
+  $ sometimes (jux (rev))
+  $ sometimes (jux (slow 2))
+  $ sometimes (jux (density 2))
+  $ sound "sax*4"
+  # gain "0.7"
+  # speed "1 0.8 1.5 1.2"
+  # vowel "o i o e"
+
+d3 $ slow 2
+  $ sometimes (jux(rev))
+  $ every 8 (slow 1)
+  $ slowcat [sound "[bin bin*2 ~]/2"
+              # speed "1 0.8 1.5 1.2",
+              sound "[can bin bin*2 ~]/2"
+              # speed "1.5 0.8 1 0.8",
+              sound "[bin ~ bin ~]/2"
+              # speed "2 3",
+              sound "[bin bin bin*2 ~]"
+              # speed "1.5 0.8 1 0.8"]
+  
+d4 $ slow 2
+  $ sometimes (jux(rev))
+  $  every 8 (density 2)
+  $ slowcat [sound "ifdrums ~ ~ ifdrums ~ ~"
+              # gain "0.8 ~ ~ 0.9 ~ ~",
+              sound "ifdrums ~ cp ifdrums ~ ~"
+              # gain "1 ~ 0.8 0.9 ~ ~"
+              # vowel "o",
+              sound "ifdrums ~ ifdrums cp ~ sn:2"
+              # gain "0.8 ~ ~ 0.9 ~ ~"
+              # crush "8"]
