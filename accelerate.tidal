@@ -6,12 +6,13 @@ hush
 
 d1 $ stack [every 4 (density 2)
              $ sometimes (jux(rev))
-             $ sound "bd dr_few ~ sn:2*2",
+             $ sound "bd dr_few ~ sn*2",
              sometimes (jux(density 4))
              $ every 3 (density 3)
              $ sound "bin*5"
              # speed "1.2 3 6 4.3 2"
              # gain "0.5"]
+
 
 d2 $ slowcat [sometimes (jux(rev))
                $ sound "moog"
@@ -57,7 +58,9 @@ d5 $ slowcat [every 4 (jux(rev))
               $ every 6 (slow 2)
               $ every 13 (slow 4)
               $ n "c2 d2"
-              # s "supergong*2",
+              # s "supersaw",
               every 3 (density 2)
-              $ n "a3 ~ ~ d3"
-              # s "supergong*2"]
+              $ n "a2 ~ ~ a1"
+              # s "supersaw"]
+  # cutoff "200" 
+  # vowel "e"            
