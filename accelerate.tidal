@@ -60,7 +60,42 @@ d5 $ slowcat [every 4 (jux(rev))
               $ n "c2 d2"
               # s "supersaw",
               every 3 (density 2)
-              $ n "a2 ~ ~ a1"
+              $ n "c2 ~ ~ a1"
               # s "supersaw"]
-  # cutoff "200" 
-  # vowel "e"            
+  # cutoff "200"
+  
+
+bps (60/60)
+hush
+
+d6 $ slow 200
+  $ striate 10
+  $ sometimes (jux (rev))
+  $ every 4 (density 2)
+  $ sound "sitar:5*4"
+  # note "c3 d3 a3 d3"
+  # delay "0.9"
+  # delayfeedback "0.6"
+  # delaytime "1"
+  # vowel "a e i a e i o e"
+  # cutoff "500"
+  # gain "1.5"
+
+
+d7 $ stack [every 4 (density 2)
+            $ sometimes (jux(rev))
+            $ sound "bd ~ bd cp"
+            # delay "0.9" |+| delayfeedback "0.3" |+| delaytime "1"
+            # gain "0.8",
+            every 4 (density 2)
+            $ every 6 (slow 2)
+            $ sound "~ bin ~ ~ [sn sn:2]"]
+            
+
+d8 $ slow 4
+  $ sometimes (jux (density 4))
+  $ every 8 (density 2)
+  $ note "c3 a2 ~ d2 ~"
+  # s "superpwm"
+  # cutoff "700"
+  # gain "0.95"
