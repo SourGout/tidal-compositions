@@ -37,6 +37,8 @@ d2 $ slow 8
   $ sometimes (jux (rev))
   $ sometimes (jux (slow 2))
   $ sometimes (jux (density 2))
+  $ every 4 (rev)
+  $ every 4 (density 2)
   $ sound "sax*4"
   # gain "0.7"
   # speed "1 0.8 1.5 1.2"
@@ -45,7 +47,7 @@ d2 $ slow 8
 d3 $ slow 2
   $ sometimes (jux(rev))
   $ every 8 (slow 1)
-  $ slowcat [sound "[bin bin*2 ~]/2"
+  $ slowcat [sound "[bin bin*2 ~]/2" 
               # speed "1 0.8 1.5 1.2",
               sound "[can bin bin*2 ~]/2"
               # speed "1.5 0.8 1 0.8",
