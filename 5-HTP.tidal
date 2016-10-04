@@ -1,13 +1,14 @@
 --5-HTP//SG
-bps (60/60)
 
+bps (60/60)
+hush
 
 d1 $ stack [slowcat [sound "bd dr_few ~ bd [hh hh:2] ~",
                      sound "cp*2 bd ~ hh ~ dr_few",
                      sound "bd industrial dr_few ~"],
              every 4 (density 2)
              $ sometimes (jux (rev))
-             $ sound "bin*3"
+             $ sound "bin*3?"
              # speed "4 1 2 4 5 1"]
 
 d2 $ striate 24
@@ -15,6 +16,23 @@ d2 $ striate 24
   $ every 4 (density 2)
   $ slow 4
   $ note "0 4 1 6" # s "supersaw"
-  # gain "0.8"
+  # gain "0.9"
   # accelerate "-1/2 0 1/2 0 0"
   # vowel "a e a i"
+  # cutoff "600"
+
+t2 xfade $ striate 24
+  $ jux (rev)
+  $ every 4 (density 2)
+  $ slow 4
+  $ note "4 1 0 2" # s "moog"
+  # gain "0.8"
+  # accelerate "-1/2 0 1/2 0 0"
+  # cutoff "500"
+
+d4 $ sometimes (jux (rev))
+  $ density 4
+  $ sometimes (slow 2)
+  $ sound "sn*5?" 
+  # speed "10 9 10 8.5 9.4"
+  # vowel "a o a o"
