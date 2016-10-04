@@ -1,0 +1,20 @@
+--5-HTP//SG
+bps (60/60)
+
+
+d1 $ stack [slowcat [sound "bd dr_few ~ bd [hh hh:2] ~",
+                     sound "cp*2 bd ~ hh ~ dr_few",
+                     sound "bd industrial dr_few ~"],
+             every 4 (density 2)
+             $ sometimes (jux (rev))
+             $ sound "bin*3"
+             # speed "4 1 2 4 5 1"]
+
+d2 $ striate 24
+  $ jux (rev)
+  $ every 4 (density 2)
+  $ slow 4
+  $ note "0 4 1 6" # s "supersaw"
+  # gain "0.8"
+  # accelerate "-1/2 0 1/2 0 0"
+  # vowel "a e a i"
