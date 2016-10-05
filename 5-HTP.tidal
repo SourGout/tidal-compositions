@@ -14,7 +14,7 @@ d1 $ stack [foldEvery [4,5,6] (density 2)
              $ sound "bin*3?"
              # speed "4 1 2 4 5 1"]
 
-d3 $ stack [striate 24
+d2 $ stack [striate 24
              $ jux (rev)
              $ every 4 (density 2)
              $ slow 4
@@ -30,7 +30,7 @@ d3 $ stack [striate 24
              # cutoff "100"
              # resonance "0.6"] # gain "0.75"
   
-t2 (xfadeIn 16)$ striate 24
+t2 (xfadeIn 16) $ striate 24
   $ jux (rev)
   $ every 4 (density 2)
   $ slow 4
@@ -55,7 +55,7 @@ d4 $ stack [sometimes (jux (rev))
              # crush "4?"]
 
 d5 $ sound "rave/8"
-  # accelerate "-1 0"
+  # accelerate "-1"
   # gain "0.9"
   # cutoff "450"
   # resonance "0.5"
