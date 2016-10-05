@@ -27,7 +27,7 @@ d2 $ stack [striate 24
              # cutoff "100"
              # resonance "0.6"]
   
-t2 (xfadeIn 8) $ striate 24
+t2 (xfadeIn 16)$ striate 24
   $ jux (rev)
   $ every 4 (density 2)
   $ slow 4
@@ -52,10 +52,10 @@ d4 $ stack [sometimes (jux (rev))
              $ sound "breaks125?"
              # crush "4?"]
 
-t1 (xfadeIn) $ sound "~"
+t1 (xfadeIn 32) $ sound "~"
 
-t2 (xfadeIn) $ sound "~"
+t2 (xfadeIn 8) $ sound "~"
 
-t3 (xfadeIn) $ sound "~"
+t2 (xfadeIn 16) $ sound "~"
 
-t4 (xfadeIn) $ sound "~"
+t4 (xfadeIn 16) $ sound "~"
