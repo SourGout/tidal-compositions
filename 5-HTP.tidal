@@ -1,17 +1,20 @@
 --5-HTP//SG
 
 bps (60/60)
+
 hush
 
-d1 $ stack [slowcat [sound "bd jungle ~ bd [hh hh:2] ~",
-                     sound "cp*2 bd ~ hh ~ jungle",
-                     sound "bd cr:2 jungle metals:7/2"],
+d1 $ stack [foldEvery [4,5,6] (density 2)
+             $ foldEvery [5,6,7] (jux(rev))
+             $ slowcat [sound "bd jungle ~ bd [hh hh:2] ~",
+                         sound "cp*2 bd ~ hh ~ jungle",
+                         sound "bd cr:2 jungle metals:7/2"],
              every 4 (density 2)
              $ sometimes (jux (rev))
              $ sound "bin*3?"
              # speed "4 1 2 4 5 1"]
 
-d2 $ stack [striate 24
+d3 $ stack [striate 24
              $ jux (rev)
              $ every 4 (density 2)
              $ slow 4
@@ -56,7 +59,7 @@ d5 $ sound "rave/8"
   # gain "0.9"
   # cutoff "450"
   # resonance "0.5"
-  # crush "8"
+  # crush "4"
 
 t1 (xfadeIn 16) $ sound "~"
 
@@ -64,6 +67,6 @@ t2 (xfadeIn 8) $ sound "~"
 
 t3 (xfadeIn 16) $ sound "~"
 
-t4 (xfadeIn 32) $ sound "~"
+t4 (xfadeIn 16) $ sound "~"
 
 t5 (xfadeIn 16) $ sound "~"
