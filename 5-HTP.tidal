@@ -58,12 +58,12 @@ d5 $ sound "rave/8"
   # resonance "0.5"
   # crush "8"
 
-t1 (xfadeIn 32) $ sound "~"
+t1 (xfadeIn 16) $ sound "~"
 
 t2 (xfadeIn 8) $ sound "~"
 
 t3 (xfadeIn 16) $ sound "~"
 
-t4 (xfadeIn 16) $ sound "~"
+t4 (xfadeIn 32) $ sound "~"
 
 t5 (xfadeIn 16) $ sound "~"
