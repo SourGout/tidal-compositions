@@ -3,24 +3,33 @@
 bps (60/60)
 hush
 
-d1 $ stack [slowcat [sound "bd dr_few ~ bd [hh hh:2] ~",
-                     sound "cp*2 bd ~ hh ~ dr_few",
-                     sound "bd industrial dr_few ~"],
+d1 $ stack [slowcat [sound "bd jungle ~ bd [hh hh:2] ~",
+                     sound "cp*2 bd ~ hh ~ jungle",
+                     sound "bd cr:2 jungle ~"],
              every 4 (density 2)
              $ sometimes (jux (rev))
              $ sound "bin*3?"
              # speed "4 1 2 4 5 1"]
 
-d2 $ striate 24
-  $ jux (rev)
-  $ every 4 (density 2)
-  $ slow 4
-  $ note "0 4 1 6" # s "supersaw"
-  # gain "0.9"
-  # accelerate "-1/2 0 1/2 0 0"
-  # vowel "a e a i"
-  # cutoff "600"
 
+  -- after triggering t1, wait 8 bars, change d2 to d3, and retrigger.
+  
+d2 $ stack [striate 24
+             $ jux (rev)
+             $ every 4 (density 2)
+             $ slow 4
+             $ note "0 4 1 6" # s "supersaw"
+             # gain "0.7"
+             # accelerate "-1/2 0 1/2 0 0"
+             # vowel "a e a i"
+             # cutoff "600",
+             striate 7
+             $ jux (rev)
+             $ n "c0 a0"
+             # s "superpwm*2"
+             # cutoff "100"
+             # resonance "0.6"]
+  
 t2 xfade $ striate 24
   $ jux (rev)
   $ every 4 (density 2)
@@ -30,9 +39,17 @@ t2 xfade $ striate 24
   # accelerate "-1/2 0 1/2 0 0"
   # cutoff "500"
 
-d4 $ sometimes (jux (rev))
-  $ density 4
-  $ sometimes (slow 2)
-  $ sound "sn*5?" 
-  # speed "10 9 10 8.5 9.4"
-  # vowel "a o a o"
+d4 $ stack [sometimes (jux (rev))
+             $ density 4
+             $ sometimes (slow 2)
+             $ sound "sn*6?" 
+             # speed "10 9 10 8.5 9.4"
+             # vowel "a o a o"
+             # gain "0.85",
+             every 4 (density 2)
+             $ sometimes (jux (rev))
+             $ every 16 (jux (striate 15))
+             $ sound "breaks165/2",
+             sound "cr/2",
+             slow 4
+             $ sound "breaks125?"]
