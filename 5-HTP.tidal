@@ -11,8 +11,6 @@ d1 $ stack [slowcat [sound "bd jungle ~ bd [hh hh:2] ~",
              $ sound "bin*3?"
              # speed "4 1 2 4 5 1"]
 
-
-  -- after triggering t1, wait 8 bars, change d2 to d3, and retrigger.
   
 d2 $ stack [striate 24
              $ jux (rev)
@@ -30,13 +28,13 @@ d2 $ stack [striate 24
              # cutoff "100"
              # resonance "0.6"]
   
-t2 xfade $ striate 24
+t2 (xfadeIn 8) $ striate 24
   $ jux (rev)
   $ every 4 (density 2)
   $ slow 4
   $ note "4 1 0 2" # s "moog"
   # gain "0.8"
-  # accelerate "-1/2 0 1/2 0 0"
+  # accelerate "0 1/2 0 0"
   # cutoff "500"
 
 d4 $ stack [sometimes (jux (rev))
@@ -52,4 +50,14 @@ d4 $ stack [sometimes (jux (rev))
              $ sound "breaks165/2",
              sound "cr/2",
              slow 4
-             $ sound "breaks125?"]
+             $ sound "breaks125?"
+             # crush "4?"]
+
+
+t1 (xfadeIn) $ sound "~"
+
+t2 (xfadeIn) $ sound "~"
+
+t3 (xfadeIn) $ sound "~"
+
+t4 (xfadeIn) $ sound "~"
