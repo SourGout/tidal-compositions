@@ -15,10 +15,20 @@ d2 $ stack [jux (rev) $ every 4 (density 2)
              sometimes (jux (density 7)) $ every 5 (density 3) $ slow 2 $ sometimes (jux(rev)) $ sound "bin*2" # speed "0.5"
            ] # gain "0.5"
 
-d3 $ stack [density 2 $ sound "bd sn:2/4 bd cp/2",
+d3 $ stack [density 2 $ sound "bd sn:2/4 odx cp/2",
              sometimes (jux (rev))
              $ every 4 (density 2)
              $ every 7 (slow 2)
-             $ sound "pluck/2 pluck/2" # speed "2 1.5" # crush "4"]
-
+             $ slow 2
+             $ sound "arp"
+             # cutoff "600"
+             # resonance "0.9"
+             # gain "1.1",
+             sometimes (jux (rev))
+             $ striate 4
+             $ sound "wobble wobble wobble"
+             #cutoff "100"
+             # resonance "0.8"
+             # gain "0.8"]
+  
 
