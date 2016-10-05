@@ -11,7 +11,6 @@ d1 $ stack [slowcat [sound "bd jungle ~ bd [hh hh:2] ~",
              $ sound "bin*3?"
              # speed "4 1 2 4 5 1"]
 
-  
 d2 $ stack [striate 24
              $ jux (rev)
              $ every 4 (density 2)
@@ -52,7 +51,6 @@ d4 $ stack [sometimes (jux (rev))
              slow 4
              $ sound "breaks125?"
              # crush "4?"]
-
 
 t1 (xfadeIn) $ sound "~"
 
