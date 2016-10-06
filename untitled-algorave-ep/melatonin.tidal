@@ -1,6 +1,6 @@
 bps (30/60)
 
-d1G $ stack [slow 4
+d1 $ stack [slow 4
              $ sometimes (jux (rev))
              $ sound (samples "oval*5" (run 4))
              # cutoff "800",
