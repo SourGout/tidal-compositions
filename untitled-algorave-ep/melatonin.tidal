@@ -10,10 +10,11 @@ d1 $ stack [slow 4
              # speed "0.8 0.5"
              # gain "0.75"]
 
+
 d2 $ slow 2
   $ sometimes (jux (rev))
   $ sound "plunder:5?"
   # gain "0.7"
-  # cutoff "500 600 700 800 700 600"
+  # cutoff "500 600 650 800 700 600"
   # resonance "0.35"
   # pan "[0.5 1]"
