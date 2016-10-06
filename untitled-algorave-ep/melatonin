@@ -1,0 +1,19 @@
+bps (30/60)
+
+d1 $ stack [slow 4
+             $ sometimes (jux (rev))
+             $ sound (samples "oval*5" (run 4))
+             # cutoff "800",
+             every 4 (jux (density 2))
+             $ foldEvery [6, 8, 10] (density 4)
+             $ sound "harsh:8? harsh:6/4"
+             # speed "0.8 0.5"
+             # gain "0.75"]
+
+d2 $ slow 2
+  $ sometimes (jux (rev))
+  $ sound "plunder:5?"
+  # gain "0.7"
+  # cutoff "500 600 700 800 700 600"
+  # resonance "0.35"
+  # pan "[0.5 1]"
