@@ -14,7 +14,7 @@ d1 $ stack [foldEvery [4,5,6] (density 2)
              $ sound "bin*3?"
              # speed "4 1 2 4 5 1"]
 
-d2 $ stack [striate 24
+d3 $ stack [striate 24
              $ jux (rev)
              $ every 4 (density 2)
              $ slow 4
@@ -30,7 +30,8 @@ d2 $ stack [striate 24
              # cutoff "100"
              # resonance "0.6"] # gain "0.75"
   
-t2 (xfadeIn 16) $ striate 24
+t2 (xfadeIn 16)
+  $ striate 24
   $ jux (rev)
   $ every 4 (density 2)
   $ slow 4
@@ -61,12 +62,53 @@ d5 $ sound "rave/8"
   # resonance "0.5"
   # crush "4"
 
-t1 (xfadeIn 16) $ sound "~"
+t1 (xfadeIn 16)
+  $ sound "~"
 
-t2 (xfadeIn 8) $ sound "~"
+t2 (xfadeIn 8)
+  $ sound "~"
 
-t3 (xfadeIn 16) $ sound "~"
+t3 (xfadeIn 16)
+  $ sound "~"
 
-t4 (xfadeIn 16) $ sound "~"
+t4 (xfadeIn 16)
+  $ sound "~"
 
-t5 (xfadeIn 16) $ sound "~"
+t5 (xfadeIn 16)
+  $ sound "~"
+
+--L-Theanine//SG
+
+bps (60/60)
+
+d6 $ slow 4
+  $ sound "comp"
+  # gain "0.8"
+  # cutoff "500"
+  
+d7 $ every 3 (striate 25)
+  $ slow 2
+  $ (jux (rev))
+  $ sound "harsh:7 harsh:6"
+  # gain "0.7"
+  
+d8 $ jux (rev)
+  $ sound "harsh:8*2"
+  # gain "0.8"
+
+t6 (xfadeIn 8)
+  $ slow 4
+  $ sound "plunder:9"
+  # gain "0.8"
+  # crush "4"
+  # cutoff "500"
+
+t6 (xfadeIn 8)
+  $ sound "~"
+
+t7 (xfadeIn 16)
+  $ sound "~"
+
+t8 (xfadeIn 16)
+  $ sound "~"
+  
