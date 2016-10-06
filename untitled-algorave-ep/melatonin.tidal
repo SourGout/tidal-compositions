@@ -1,6 +1,6 @@
 bps (30/60)
 
-d1 $ stack [slow 4
+d1G $ stack [slow 4
              $ sometimes (jux (rev))
              $ sound (samples "oval*5" (run 4))
              # cutoff "800",
@@ -14,7 +14,7 @@ d1 $ stack [slow 4
 d2 $ slow 2
   $ sometimes (jux (rev))
   $ sound "plunder:5?"
-  # gain "0.7"
+  # gain "0.65"
   # cutoff "500 600 650 800 700 600"
   # resonance "0.35"
   # pan "[0.5 1]"
