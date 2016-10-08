@@ -43,3 +43,18 @@ t2 (xfadeIn 8)
 
 t3 (xfadeIn 16)
   $ sound "~"
+
+
+d4 $ sometimes (jux (rev))
+  $ slowcat [every 4 (palindrome)
+              $ note "7 4 0 3" # s "superhex",
+              note "1" # s "moog",
+              sound "~",
+              sound "~",
+              sound "~"]
+
+d5 $ striate 10
+  $ slow 4
+  $ sometimes (jux (rev))
+  $ sound "breaks157 harsh:5"
+  # cut "1"
