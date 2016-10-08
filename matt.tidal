@@ -1,0 +1,16 @@
+bps (60/60)
+
+hush
+
+d1 $ sometimes (jux (rev)) $ slow 5 $ sound (samples "oval 4" (run 4))
+  # crush "8 8 6"
+
+d2 $ slow 2 $ striate 100 $ sound "harsh:8"
+
+t2 (xfadeIn 16) $ stack [slow 2 $ sound (samples "metals*5" (run 8)),
+                          sound (samples "harsh*7" (run 8))]
+  
+d4 $ sometimes (jux (rev)) $ slow 2 $ every 6 (density 3) $ sound (samples "sn*4" (run 4)) # crush "8"
+
+d5 $ stack [every 6 (striate 50) $ sound "breaks165",
+             sound "gabba ~ gabba" # gain "0.6"]

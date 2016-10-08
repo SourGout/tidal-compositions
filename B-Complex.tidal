@@ -1,0 +1,45 @@
+--B-Complex//SG
+
+bps (60/60)
+
+d1 $ slow 8
+  $ sometimes (jux (rev))
+  $ foldEvery [16, 17, 18] (palindrome)
+  $ striate 200
+  $ sound "oval harsh:4"
+  # crush "8"
+  # vowel "i o"
+
+t2 (xfadeIn 32) $ stack [density 2
+                          $ every 4 (slow 2)
+                          $ every 6 (jux (rev))
+                          $ sometimes (jux (rev))
+                          $ sound "bd ~ cp bd bin bd ~ bin:2*2"
+                          # gain "0.9"
+                          # crush "8"
+                          # cutoff "800"
+                          # resonance "0.2",
+                          slow 8
+                          $ striate 10
+                          $ sound "plunder"
+                          # gain "0.7"
+                          # cutoff "300"
+                          # resonance "0.1"
+                          # cut "1"
+                          # vowel "e"]
+  
+t3 (xfadeIn 64) $ stack [sometimes (jux (rev))
+                          $ foldEvery [4, 5, 6] (density 2)
+                          $ sound (samples "techno*4" (run 4)),
+                          sometimes (jux (rev))
+                          $ foldEvery [4, 5, 6, 7] (slow 2)
+                          $ sound (samples "dr_few*8" (run 8))]
+
+t1 (xfadeIn 16)
+  $ sound "~"
+
+t2 (xfadeIn 8)
+  $ sound "~"
+
+t3 (xfadeIn 16)
+  $ sound "~"
