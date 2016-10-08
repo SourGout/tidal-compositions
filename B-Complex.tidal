@@ -40,21 +40,28 @@ t1 (xfadeIn 16)
 
 t2 (xfadeIn 8)
   $ sound "~"
-
+  
 t3 (xfadeIn 16)
   $ sound "~"
 
+t4 (xfadeIn 16)
+  $ sound "~"
 
+t5 (xfadeIn 16)
+  $ sound "~"
+  
 d4 $ sometimes (jux (rev))
-  $ slowcat [every 4 (palindrome)
-              $ note "7 4 0 3" # s "superhex",
-              note "1" # s "moog",
+  $ slowcat [foldEvery [5, 6, 7] (density 2)
+              $ every 4 (palindrome)
+              $ note "7 4 0 3 6 0" # s "superhex"
+              # gain "0.5 0.6 0.7 0.6 0.7 0.5",
+              note "1" # s "moog"
+              # cutoff "500",
               sound "~",
               sound "~",
               sound "~"]
 
-d5 $ striate 10
+d5 $ striate 15
   $ slow 4
   $ sometimes (jux (rev))
-  $ sound "breaks157 harsh:5"
-  # cut "1"
+  $ sound "~ harsh:5"
