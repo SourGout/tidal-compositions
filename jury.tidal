@@ -144,7 +144,7 @@ bps (55/60)
 d2 $ slow 2
   $ foldEvery [10, 11] (striate 1)
   $ sometimes (jux (rev))
-  $ sound "nhk:2*4 nhk:1?"
+  $ sound "nhk:2*3 nhk:1?"
   # cutoff "1600"
 
 d3 $ slow 8
