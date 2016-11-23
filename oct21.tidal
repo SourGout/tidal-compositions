@@ -1,0 +1,36 @@
+bps (180/60)
+
+d1 $ every 5 (density 2)
+  $ sound "gabba gabba bin gabba"
+  # cutoff "600"
+
+d2 $ sound "cp cp ~ sn"
+
+d3 $ sometimes (jux rev)
+  $ sound "hh*8"
+
+d4 $ sound "rave:2/8 rave:3/17"
+
+d5 $ slow (2)
+  $ every 4 (density 2)
+  $ sometimes (jux rev)
+  $ sound "superhex*4"
+  # n "0 2 3 8"
+  # vowel "e i o i o a"
+  # crush "1"
+  # gain "0.5"
+
+d5 $ every 4 (density 2)
+  $ sometimes (jux (rev)
+  $ sound "superhex*4"
+  # n "8 3 2 3"
+  # crush "4"
+  # gain "0.7"
+
+d6 $ slow (4)
+  $ sometimes (jux (rev))
+  $ sound (samples "harsh*4" (run 4))
+
+t5 (xfadeIn 16) $ sound "~"
+
+t6 (xfadeIn 16) $ sound "~"

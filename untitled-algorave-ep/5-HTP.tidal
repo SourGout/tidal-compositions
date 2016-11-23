@@ -55,13 +55,6 @@ d4 $ stack [sometimes (jux (rev))
              $ sound "breaks125?"
              # crush "4?"]
 
-d5 $ sound "rave/8"
-  # accelerate "-1"
-  # gain "0.9"
-  # cutoff "450"
-  # resonance "0.5"
-  # crush "4"
-
 t1 (xfadeIn 16)
   $ sound "~"
 

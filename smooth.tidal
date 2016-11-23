@@ -1,6 +1,7 @@
 -- \\track two - | smooth |
 
 bps (100/60)
+bps (60/60)
 hush
 
 d1 $ stack [every 4 (jux (rev))
@@ -13,7 +14,7 @@ d1 $ stack [every 4 (jux (rev))
              # vowel "0",
              sometimes (jux(density 2))
              $ sound "sine/4 pluck/2 sine*3 ~"
-             # speed "12 12/2 [12 12.5]"
+             # speed "12 12/2 [12 12.5
              # cutoff "600/2 900/2 1200/2"
              # gain "0.85"
              # vowel "i",
@@ -61,9 +62,9 @@ d4 $ slow 2
   $  every 8 (density 2)
   $ slowcat [sound "ifdrums ~ ~ ifdrums ~ ~"
               # gain "0.8 ~ ~ 0.9 ~ ~",
-              sound "ifdrums ~ cp ifdrums ~ ~"
+              sound "ifdrums ~ metals:3 ifdrums ~ ~"
               # gain "1 ~ 0.8 0.9 ~ ~"
               # vowel "o",
-              sound "ifdrums ~ ifdrums cp ~ sn:2"
+              sound "ifdrums ~ ifdrums metals:4 ~ sn:2"
               # gain "0.8 ~ ~ 0.9 ~ ~"
               # crush "8"]

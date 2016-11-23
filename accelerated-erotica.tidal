@@ -1,0 +1,50 @@
+bps (200/60)
+
+d1 $ every 6 (jux (rev))
+  $ foldEvery [8, 9, 10] (slow 2)
+  $ slowcat [sound "bd*2 hh",
+              sound "bd bd:2 wobble:2 industrial:9"
+              # crush "16 16 16 6",
+              sound "[cp bd cp bd] bass:4",
+              sound "cp:2 bass:6"]
+
+d2 $ stack [slow 4 $ sound "industrial:2",
+             slow 5 $ sound "industrial:5",
+             sometimes (jux (rev))
+             $ slow 6
+             $ sound "industrial:10 industrial:14/2"]
+  # gain "1.15"
+
+t3 (xfadeIn 32)
+  $ slow 4
+  $ slowcat [sometimes (jux (density 2))
+              $ midinote "36 [38 39]"
+              # s "supersaw"
+              # crush "4"
+              # shape "0.5"
+              # vowel "i"
+              # gain "0.8"
+              # sustain "2",
+              sometimes (jux (rev))
+              $ midinote "39 43 44 ~"
+              # s "supersaw"
+              # crush "6"
+              # vowel "o"
+              # gain "0.85"
+              # sustain "2"]
+               
+d4 $ foldEvery [10, 11, 12] (rev)
+  $ sometimes (jux (slow 2))
+  $ n "8 7 2 3 0 3"
+  # s "supersaw"
+  # cutoff "700"
+  # sustain "0.1"
+  # resonance "0.5"
+  # gain "0.8"
+
+d5 $ slow 16
+  $ sound "armora:2"
+  # shape "0.5"
+  # gain "1.5"
+
+t3 (xfadeIn 32) $ sound "~"

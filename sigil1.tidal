@@ -1,0 +1,76 @@
+bps (10/60)
+
+bps (85/60)
+
+d1 $ sound "~"
+
+d5 $ sound "~"
+
+t1 (xfadeIn 8) $ stack [every 8 (rev)
+                         $ sometimes (jux (rev))
+                         $ midinote "72 72 75 ~ 74"
+                         # s "supersaw"
+                         # sustain "4"
+                         # vowel "a"
+                         # cutoff "400"
+                         # resonance "0.1"
+                         # gain "0.7",
+                         midinote "56 ~ 55"
+                         # s "superpwm"
+                         # sustain "5"
+                         # vowel "a ~ e"
+                         # gain "0.8",
+                         sometimes (jux (rev))
+                         $ every 5 (density 2)
+                         $ every 6 (rev)
+                         $ every 9 (slow 2)
+                         $ midinote "91 89 [89 84] ~"
+                         # s "superhex",
+                         slowcat [midinote "38 38 41 38 38"
+                                   # s "superpwm"
+                                   # sustain "5"
+                                   # gain "1.2",
+                                   foldEvery [4, 5, 6] (density 8)
+                                   $ sound "~"]] 
+
+d2 $ slow 4
+  $ striate 20
+  $ sound "vib"
+  # cut "4"
+  # cutoff "600"
+  # resonance "0.2"
+  # gain "1"
+  
+d3 $ slowcat $ [every 4 (density 2)
+                 $ sometimes (jux (rev))
+                 $ sound "sn wobble:3 [bd hh] gabba:3"
+                 # crush "8",
+                 sometimes (jux (rev))
+                 $ sound "wobble [sn sn] hh gabba:3"]
+  
+d2 $ slow 4
+  $ striate 40
+  $ sound "vib"
+  # cut "4"
+  # cutoff "400"
+  # resonance "0.2"
+  # gain "1"
+
+d4 $ slow 4
+  $ sound "industrial:10"
+
+t5 (xfadeIn 16) $ stack [sometimes (jux (rev))
+                         $ every 3 (density 2)
+                         $ every 5 (rev)
+                         $ every 10 (slow 2)
+                         $ midinote "91 89 [89 84] ~"
+                         # s "superhex",
+                         slowcat [midinote "38 38 41 38 38"
+                                   # s "superpwm"
+                                   # sustain "5"
+                                   # gain "1.2",
+                                   foldEvery [4, 5, 6] (density 8)
+                                   $ sound "~"]
+                          # cutoff "200"
+                          # gain "0.8"]
+
