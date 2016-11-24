@@ -1,15 +1,55 @@
 -- jury//fall2016
 
-bps (10/60)
-
 bps (30/60)
 
-d1 $ striate 10
+t1 (xfadeIn 8)
+  $ striate 10
   $ sometimes (jux (density 2))
   $ foldEvery [5, 9] (slow 2)
   $ sound "vib*8"
   # cut "4"
   # gain "1"
+  # cutoff "1600"
+
+d2 $ slow 4
+  $ striate 20
+  $ foldEvery [12, 13, 15, 16] (density 2)
+  $ sometimes (jux (rev))
+  $ sound "nhk:2*4 nhk:1?"
+  # cutoff "1600"
+  # resonance "0.2 0.3 0.4"
+
+d3 $ slow 8
+  $ striate 20
+  $ sometimes (jux (rev))
+  $ foldEvery [14, 17] (density 2)
+  $ sound "nhk:4*8"
+  # cutoff "800"
+  # resonance "0.1 0.3"
+
+d4 $ every 5 (density 2)
+  $ sound "nhk:1"
+  # cutoff "200"
+  # resonance "0.5"
+  # gain "0.8"
+
+d5 $ sometimes (jux (rev))
+  $ density 4
+  $ sometimes (slow 2)
+  $ sound "sn*6? future:1?" 
+  # speed "10 9 10 8.5 9.4"
+  # vowel "a o a o"
+  # gain "0.9"
+
+d6 $ sometimes (density 2)
+  $ sometimes (jux (rev))
+  $ foldEvery [6, 7, 10] (slow 2)
+  $ sound "nhk:1? nhk:3? nhk:4?"
+  # vowel "e i o"
+  # cutoff "1000"
+  # resonance "0.2"
+  # gain "0.9"
+  
   
 t1 (xfadeIn 16) $ stack [slow 4
                           $ sometimes (jux (rev)) 
@@ -20,7 +60,7 @@ t1 (xfadeIn 16) $ stack [slow 4
                           $ sound "harsh:8? harsh:6/4"
                           # speed "0.7 0.5"
                           # gain "0.75"]
-
+  
 t2 (xfadeIn 16) $ stack [sometimes (jux (rev))
                          $ every 3 (density 2)
                          $ every 5 (rev)
@@ -36,24 +76,27 @@ t2 (xfadeIn 16) $ stack [sometimes (jux (rev))
                           # cutoff "200"
                           # gain "0.8"]
 
-d3 $ density 1 $ stack [jux (rev) $ every 4 (density 2)
-                         $ every 7 (slow 2)
-                         $ sound "bin*6"
-                         # speed "2 1.5 0.75 1.25 1 2.5",
-                         sometimes (jux (density 3))
-                         $ every 7 (slow 3)
-                         $ every 3 (density 2)
-                         $ sound "bin*5"
-                         # speed "1 1.25 0.75 1.5 2",
-                         sometimes (jux (density 7))
-                         $ every 5 (density 3)
-                         $ slow 2
-                         $ sometimes (jux(rev))
-                         $ sound "bin*2"
-                         # speed "0.5"]
+t3 (xfadeIn 16)
+  $ density 1
+  $ stack [jux (rev)
+            $ every 4 (density 2)
+            $ every 7 (slow 2)
+            $ sound "bin*6"
+            # speed "2 1.5 0.75 1.25 1 2.5",
+            sometimes (jux (density 3))
+            $ every 7 (slow 3)
+            $ every 3 (density 2)
+            $ sound "bin*5"
+            # speed "1 1.25 0.75 1.5 2",
+            sometimes (jux (density 7))
+            $ every 5 (density 3)
+            $ slow 2
+            $ sometimes (jux(rev))
+            $ sound "bin*2"
+            # speed "0.5"]
   # gain "0.5"
 
-d5 $ slow 2
+d4 $ slow 2
   $ sometimes (jux (rev))
   $ foldEvery [16, 17, 18] (palindrome)
   $ striate 200
@@ -67,11 +110,10 @@ t1 (xfadeIn 8)
 t3 (xfadeIn 8)
   $ sound "~"
 
-bps (55/60)
-
-bps (120/60)
-
-hush
+t4 (xfadeIn 8)
+ $ sound "~"
+  
+bps (60/60)
 
 t1 (xfadeIn 8) $ stack [foldEvery [4,5,6] (density 2)
                          $ foldEvery [5,6,7] (jux(rev))
@@ -137,33 +179,15 @@ t3 (xfadeIn 16)
 t4 (xfadeIn 16)
   $ sound "~"
 
+bps (10/60)
 
-bps (55/60)
+t1 (xfadeIn 8)
+  $ striate 10
+  $ sometimes (jux (density 2))
+  $ foldEvery [5, 9] (slow 2)
+  $ sound "vib*8"
+  # cut "4"
+  # gain "1"
 
-
-d2 $ slow 2
-  $ foldEvery [10, 11] (striate 1)
-  $ sometimes (jux (rev))
-  $ sound "nhk:2*3 nhk:1?"
-  # cutoff "1600"
-
-d3 $ slow 8
-  $ striate 20
-  $ sometimes (jux (rev))
-  $ sound "nhk:4*8"
-  # cutoff "800"
-  # resonance "0.1"
-
-d4 $ slow 2
-  $ sound "nhk:2*4 nhk?"
-  # cutoff "200"
-  # resonance "0.5"
-  # gain "0.8"
-
-d5 $ sometimes (jux (rev))
-  $ density 4
-  $ sometimes (slow 2)
-  $ sound "sn*6?" 
-  # speed "10 9 10 8.5 9.4"
-  # vowel "a o a o"
-  # gain "0.85"
+t1 (xfadeIn 4)
+  $ sound "~"
