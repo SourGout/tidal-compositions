@@ -2,6 +2,8 @@
 
 bps (30/60)
 
+d1 $ sound "~"
+
 t1 (xfadeIn 8)
   $ striate 10
   $ sometimes (jux (density 2))
@@ -9,7 +11,7 @@ t1 (xfadeIn 8)
   $ sound "vib*8"
   # cut "4"
   # gain "1"
-  # cutoff "1600"
+  # cutoff "800"
 
 d2 $ slow 4
   $ striate 20
@@ -50,7 +52,15 @@ d6 $ sometimes (density 2)
   # resonance "0.2"
   # gain "0.9"
   
-  
+t4 (xfadeIn 16)
+  $ sound "~"
+
+t5 (xfadeIn 16)
+  $ sound "~"
+
+t6 (xfadeIn 16)
+  $ sound "~"
+
 t1 (xfadeIn 16) $ stack [slow 4
                           $ sometimes (jux (rev)) 
                           $ sound (samples "oval*5" (run 4))
@@ -131,7 +141,6 @@ t2 (xfadeIn 8) $ stack [striate 24
                          $ slow 4
                          $ note "0 4 1 6" # s "supersaw"
                          # gain "0.7"
-                         # accelerate "-1/2 0 1/2 0 0"
                          # vowel "a e a i"
                          # cutoff "600",
                          striate 7
@@ -179,15 +188,14 @@ t3 (xfadeIn 16)
 t4 (xfadeIn 16)
   $ sound "~"
 
-bps (10/60)
-
-t1 (xfadeIn 8)
+t1 (xfadeIn 16)
+  $ slow 6
   $ striate 10
-  $ sometimes (jux (density 2))
+  $ sometimes (jux (rev))
   $ foldEvery [5, 9] (slow 2)
   $ sound "vib*8"
   # cut "4"
   # gain "1"
 
-t1 (xfadeIn 4)
+t1 (xfadeIn 16)
   $ sound "~"
