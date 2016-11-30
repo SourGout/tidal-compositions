@@ -135,7 +135,7 @@ t1 (xfadeIn 8) $ stack [foldEvery [4,5,6] (density 2)
                          $ sound "bin*3?"
                          # speed "4 1 2 4 5 1"]
   
-t2 (xfadeIn 8) $ stack [striate 24
+t3 (xfadeIn 8) $ stack [striate 24
                          $ jux (rev)
                          $ every 4 (density 2)
                          $ slow 4
