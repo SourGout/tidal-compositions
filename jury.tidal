@@ -1,16 +1,46 @@
--- jury//fall2016
+bps (60/60)
+
+d1 $ stack [foldEvery [6, 14] (palindrome)
+             $ foldEvery [6, 14, 15] (jux (rev))
+             $ sound "bd ~ [bd cp] bd hh bin:2? [cr sn:2] future future ~ bd [cp cp] {bd future bass} cr/2 bin:3 bd cp"
+             # crush "20 16 8? 16 9? 8? 14 5?"
+             # gain "0.9*2 1? 0.7/4?",
+             sound "metals:4? metals:3?"
+             # vowel "o"
+             # cutoff "500"
+             # resonance "0.2"
+             # gain "0.9",
+             density 2
+             $ foldEvery [6, 8, 13] (palindrome)
+             $ foldEvery [3, 4, 6] (jux (rev))
+             $ sound "rc:2 rc:5 [rc:4 rc:6] rc:28/4 {rc:15 rc:6 rc:24/2} rc:8 rc:7 rc:16"
+             # cutoff "700 800 900 1000 1200 1700 2000"
+             # resonance "0.25 0.2/16?"
+             # gain "0.9 0.8 0.6? 0.7",
+             sometimes (jux (rev))
+             $ density 4
+             $ sometimes (slow 2)
+             $ sound "sn*6? future:1?" 
+             # speed "10 9 10 8.5 9.4"
+             # vowel "a o a o"
+             # gain "0.9",
+             every 15 (density 2)
+             $ sound "bd*4",
+             sound "wobble*2"
+           ]
+
 
 bps (30/60)
 
 d1 $ sound "~"
 
-t1 (xfadeIn 8)
+t1 (xfadeIn 16)
+  $ slow 6
   $ striate 10
-  $ sometimes (jux (density 2))
+  $ sometimes (jux (rev))
   $ foldEvery [5, 9] (slow 2)
   $ sound "vib*8"
   # cut "4"
-  # gain "1"
   # cutoff "800"
 
 d2 $ slow 4
@@ -50,7 +80,7 @@ d6 $ sometimes (density 2)
   # vowel "e i o"
   # cutoff "1000"
   # resonance "0.2"
-  # gain "0.9"
+  # gain "0.8"
   
 t4 (xfadeIn 16)
   $ sound "~"
@@ -61,33 +91,35 @@ t5 (xfadeIn 16)
 t6 (xfadeIn 16)
   $ sound "~"
 
-t1 (xfadeIn 16) $ stack [slow 4
-                          $ sometimes (jux (rev)) 
-                          $ sound (samples "oval*5" (run 4))
-                          # cutoff "800",
-                          every 4 (jux (density 2))
-                          $ foldEvery [6, 8, 10] (density 4)
-                          $ sound "harsh:8? harsh:6/4"
-                          # speed "0.7 0.5"
-                          # gain "0.75"]
+t1 (xfadeIn 16)
+  $ stack [slow 4
+            $ sometimes (jux (rev)) 
+            $ sound (samples "oval*5" (run 4))
+            # cutoff "800",
+            every 4 (jux (density 2))
+            $ foldEvery [6, 8, 10] (density 4)
+            $ sound "harsh:8? harsh:6/4"
+            # speed "0.7 0.5"
+            # gain "0.75"]
   
-t2 (xfadeIn 16) $ stack [sometimes (jux (rev))
-                         $ every 3 (density 2)
-                         $ every 5 (rev)
-                         $ every 10 (slow 2)
-                         $ midinote "91 89 [89 84] ~"
-                         # s "superhex",
-                         slowcat [midinote "38 38 41 38 38"
-                                   # s "superpwm"
-                                   # sustain "5"
-                                   # gain "1.2",
-                                   foldEvery [4, 5, 6] (density 8)
-                                   $ sound "~"]
-                          # cutoff "200"
-                          # gain "0.8"]
+t2 (xfadeIn 16)
+  $ stack [sometimes (jux (rev))
+            $ every 3 (density 2)
+            $ every 5 (rev)
+            $ every 10 (slow 2)
+            $ midinote "91 89 [89 84] ~"
+            # s "superhex"
+            # gain "0.8",
+            slowcat [midinote "38 38 41 38 38"
+                      # s "superpwm"
+                      # sustain "5"
+                      # gain "1.2",
+                      foldEvery [4, 5, 6] (density 8)
+                      $ sound "~"]
+            # cutoff "200"
+            # gain "0.8"]
 
 t3 (xfadeIn 16)
-  $ density 1
   $ stack [jux (rev)
             $ every 4 (density 2)
             $ every 7 (slow 2)
@@ -125,30 +157,32 @@ t4 (xfadeIn 8)
   
 bps (60/60)
 
-t1 (xfadeIn 8) $ stack [foldEvery [4,5,6] (density 2)
-                         $ foldEvery [5,6,7] (jux(rev))
-                         $ slowcat [sound "bd jungle ~ bd [hh hh:2] ~",
-                                     sound "cp*2 bd ~ hh ~ jungle",
-                                     sound "bd cr:2 jungle metals:7/2"],
-                         every 4 (density 2)
-                         $ sometimes (jux (rev))
-                         $ sound "bin*3?"
-                         # speed "4 1 2 4 5 1"]
+t1 (xfadeIn 8)
+  $ stack [foldEvery [4,5,6] (density 2)
+            $ foldEvery [5,6,7] (jux(rev))
+            $ slowcat [sound "bd jungle ~ bd [hh hh:2] ~",
+                        sound "cp*2 bd ~ hh ~ jungle",
+                        sound "bd cr:2 jungle metals:7/2"],
+            every 4 (density 2)
+            $ sometimes (jux (rev))
+            $ sound "bin*3?"
+            # speed "4 1 2 4 5 1"]
   
-t2 (xfadeIn 8) $ stack [striate 24
-                         $ jux (rev)
-                         $ every 4 (density 2)
-                         $ slow 4
-                         $ note "0 4 1 6" # s "supersaw"
-                         # gain "0.7"
-                         # vowel "a e a i"
-                         # cutoff "600",
-                         striate 7
-                         $ jux (rev)
-                         $ n "c0 a0"
-                         # s "superpwm*2"
-                         # cutoff "100"
-                         # resonance "0.6"]
+t2 (xfadeIn 8)
+  $ stack [striate 24
+            $ jux (rev)
+            $ every 4 (density 2)
+            $ slow 4
+            $ note "0 4 1 6" # s "supersaw"
+            # gain "0.7"
+            # vowel "a e a i"
+            # cutoff "600",
+            striate 7
+            $ jux (rev)
+            $ n "c0 a0"
+            # s "superpwm*2"
+            # cutoff "100"
+            # resonance "0.6"]
   # gain "0.75"
   
 t2 (xfadeIn 16)
@@ -195,7 +229,13 @@ t1 (xfadeIn 16)
   $ foldEvery [5, 9] (slow 2)
   $ sound "vib*8"
   # cut "4"
-  # gain "1"
 
 t1 (xfadeIn 16)
   $ sound "~"
+
+
+--4th Movement
+
+d1 $ foldEvery [10, 13] (jux (rev))
+  $ every 9 (slow 2)
+  $ sound "bd bd [sn:1 bd:2] metals:3? bd ~"

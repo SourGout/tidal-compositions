@@ -1,0 +1,24 @@
+bps (120/60)
+
+d1 $ slow 8
+  $ foldEvery [4, 5, 7] (slow 2)
+  $ striateL' 5 0.4 2
+  $ sound "vib"
+  # crush "9 8 10 8"
+  # vowel "o"
+
+d2 $ stack [foldEvery [6, 8, 12, 13] (density 2)
+             $ foldEvery [7, 10, 18] (palindrome)
+             $ every 14 (slow 2)
+             $ sound "[bd bd] future:2 cp?",
+             foldEvery [3, 4] (slow 2)
+             $ sometimes (jux (rev))
+             $ sometimes (palindrome)
+             $ sound "[sn:2 sn:3 metals] sn*2"
+             # vowel "o e"
+             # speed "[1.2 1.5 1.5] 2",
+             slow 2
+             $ sound "~ ~ ~ metals:2 nhk:4/4?"
+             # speed "0.8"
+             # gain "1.2"
+            ]
